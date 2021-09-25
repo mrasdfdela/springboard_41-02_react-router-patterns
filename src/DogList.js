@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
+
 import duke from "./img/duke.jpg";
 import tubby from "./img/tubby.jpg";
 import perry from "./img/perry.jpg";
@@ -14,11 +16,12 @@ function DogList(dogList) {
   return (
     <div className="dogList">
       { dogList.dogList.map( (dogData)=>{
-        console.log(dogData);
         return (
         <div className="dog">
           <h3>{dogData.name}</h3>
-          <img src={dogs[dogData.src]} alt={dogData.name} />
+          <Link to={`/dogs/${dogData.src}`}>
+            <img src={dogs[dogData.src]} alt={dogData.name} />
+          </Link>
         </div>
         )
         })

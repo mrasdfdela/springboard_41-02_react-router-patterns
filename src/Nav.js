@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Nav() {
+function Nav(dogList) {
   return (
     <div className="NavLinks">
-      
-      <NavLink to="/dogs" >Dogs</NavLink>
-      <NavLink to="/dogs/:name" >DogNames</NavLink>
+      { dogList.dogList.map ((dogData) =>{
+          let url = `/dogs/${dogData.src}`
+          return <NavLink to={url}>{dogData.name}</NavLink>
+        })
+      }
     </div>
   )
 }

@@ -12,13 +12,13 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav dogList={ App.defaultProps.dogs } />
       <Switch>
         <Route exact path="/dogs" >
           <DogList dogList={ App.defaultProps.dogs }/>
         </Route>
         <Route exact path="/dogs/:name" >
-          <DogDetails />
+          <DogDetails dogList={ App.defaultProps.dogs }/>
         </Route>
         <Redirect to="/dogs" />
       </Switch>
