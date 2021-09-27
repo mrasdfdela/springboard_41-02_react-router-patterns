@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import NewColor from "./NewColor"
 import Colors from './Colors'
 import Color from './Color'
-// import './App.css';
+import './App.css';
 
 function App() {
   const [colors, setColors] = useState([]);
